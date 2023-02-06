@@ -1,0 +1,1176 @@
+{
+	"info": {
+		"_postman_id": "0d842f7f-5810-4705-b825-c3637e85596b",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24332680"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"email\": \"akankshaj@gmail.com\",\r\n\t\"password\": \"password\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ecommerceservice.herokuapp.com/user/signup",
+							"protocol": "https",
+							"host": [
+								"ecommerceservice",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"email\": \"akankshaj@gmail.com\",\r\n\t\"password\": \"password\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ecommerceservice.herokuapp.com/user/login",
+							"protocol": "https",
+							"host": [
+								"ecommerceservice",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzZmNDY0YTIyYjRkMDAwMTdlYTc1NzQiLCJpYXQiOjE2NjgyMzY5NjYsImV4cCI6MTY2ODMyMzM2Nn0.kkv1FPZ9C9pXCHEPiEKdOpYwVpTnOSgo50OqP2ZXMZ0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://ecommerceservice.herokuapp.com/user",
+							"protocol": "https",
+							"host": [
+								"ecommerceservice",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "•\tDelete User by Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzZmNDY0YTIyYjRkMDAwMTdlYTc1NzQiLCJpYXQiOjE2NjgyMzY5NjYsImV4cCI6MTY2ODMyMzM2Nn0.kkv1FPZ9C9pXCHEPiEKdOpYwVpTnOSgo50OqP2ZXMZ0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://ecommerceservice.herokuapp.com/user/62c1d73182188c001766709a",
+							"protocol": "https",
+							"host": [
+								"ecommerceservice",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"user",
+								"62c1d73182188c001766709a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "get all product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.globals.set(\"variable_key\", \"variable_value\");\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{aj}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ecommerceservice.herokuapp.com/products",
+							"protocol": "https",
+							"host": [
+								"ecommerceservice",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () \r",
+									"{\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"const box = pm.response.json();\r",
+									"pm.globals.set(\"ProductID\",box.product._id)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{aj}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"mobile\",\r\n\t\"price\": \"6500\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ecommerceservice.herokuapp.com/products",
+							"protocol": "https",
+							"host": [
+								"ecommerceservice",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create product Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () \r",
+									"{\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"const box = pm.response.json();\r",
+									"pm.globals.set(\"ProductID\",box.product._id)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{aj}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"{{product}}\",\r\n\t\"price\": \"{{prices}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ecommerceservice.herokuapp.com/products",
+							"protocol": "https",
+							"host": [
+								"ecommerceservice",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get product by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{aj}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ecommerceservice.herokuapp.com/products/{{productid}}",
+							"protocol": "https",
+							"host": [
+								"ecommerceservice",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"products",
+								"{{productid}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get product by id Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{aj}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ecommerceservice.herokuapp.com/products/{{ProductID}}",
+							"protocol": "https",
+							"host": [
+								"ecommerceservice",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"products",
+								"{{ProductID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzZmNDY0YTIyYjRkMDAwMTdlYTc1NzQiLCJpYXQiOjE2NjgyMzY5NjYsImV4cCI6MTY2ODMyMzM2Nn0.kkv1FPZ9C9pXCHEPiEKdOpYwVpTnOSgo50OqP2ZXMZ0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"string\",\r\n\t\"price\": 50\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ecommerceservice.herokuapp.com/products/636f4f1922b4d00017ea7579",
+							"protocol": "https",
+							"host": [
+								"ecommerceservice",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"products",
+								"636f4f1922b4d00017ea7579"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete product by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{aj}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://ecommerceservice.herokuapp.com/products/{{ProductID}}",
+							"protocol": "https",
+							"host": [
+								"ecommerceservice",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"products",
+								"{{ProductID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "get all orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzZmNDY0YTIyYjRkMDAwMTdlYTc1NzQiLCJpYXQiOjE2NjgyMzY5NjYsImV4cCI6MTY2ODMyMzM2Nn0.kkv1FPZ9C9pXCHEPiEKdOpYwVpTnOSgo50OqP2ZXMZ0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ecommerceservice.herokuapp.com/orders",
+							"protocol": "https",
+							"host": [
+								"ecommerceservice",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create a order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzZmNDY0YTIyYjRkMDAwMTdlYTc1NzQiLCJpYXQiOjE2NjgyMzY5NjYsImV4cCI6MTY2ODMyMzM2Nn0.kkv1FPZ9C9pXCHEPiEKdOpYwVpTnOSgo50OqP2ZXMZ0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"product\":\"636f4f1922b4d00017ea7579\",\r\n\t\"quantity\": 50\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ecommerceservice.herokuapp.com/orders",
+							"protocol": "https",
+							"host": [
+								"ecommerceservice",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get order by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzZmNDY0YTIyYjRkMDAwMTdlYTc1NzQiLCJpYXQiOjE2NjgyMzY5NjYsImV4cCI6MTY2ODMyMzM2Nn0.kkv1FPZ9C9pXCHEPiEKdOpYwVpTnOSgo50OqP2ZXMZ0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ecommerceservice.herokuapp.com/orders/636f52c622b4d00017ea757a",
+							"protocol": "https",
+							"host": [
+								"ecommerceservice",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"orders",
+								"636f52c622b4d00017ea757a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update order by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzZmNDY0YTIyYjRkMDAwMTdlYTc1NzQiLCJpYXQiOjE2NjgyMzY5NjYsImV4cCI6MTY2ODMyMzM2Nn0.kkv1FPZ9C9pXCHEPiEKdOpYwVpTnOSgo50OqP2ZXMZ0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"product\": \"636f4f1922b4d00017ea7579\",\r\n\t\"quantity\": 50\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ecommerceservice.herokuapp.com/orders/636f4f1922b4d00017ea7579",
+							"protocol": "https",
+							"host": [
+								"ecommerceservice",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"orders",
+								"636f4f1922b4d00017ea7579"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete order by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzZmNDY0YTIyYjRkMDAwMTdlYTc1NzQiLCJpYXQiOjE2NjgyMzY5NjYsImV4cCI6MTY2ODMyMzM2Nn0.kkv1FPZ9C9pXCHEPiEKdOpYwVpTnOSgo50OqP2ZXMZ0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://ecommerceservice.herokuapp.com/orders/622835afd7cea500172f118e",
+							"protocol": "https",
+							"host": [
+								"ecommerceservice",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"orders",
+								"622835afd7cea500172f118e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Google maps",
+			"item": [
+				{
+					"name": "Google Maps Add  API(JSON)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzZmNDY0YTIyYjRkMDAwMTdlYTc1NzQiLCJpYXQiOjE2NjgzMjI4MjMsImV4cCI6MTY2ODQwOTIyM30.eHHMfu5x-zz2O75dAg-OAZcRAGN3454dBbrDZUv_Lrs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"location\":{\r\n        \"lat\" : -38.383494,\r\n        \"lng\" : 33.427362\r\n    },\r\n    \"accuracy\":50,\r\n    \"name\":\"Frontline house\",\r\n    \"phone_number\":\"(+91) 983 893 3937\",\r\n    \"address\" : \"29, side layout, cohen 09\",\r\n    \"types\": [\"shoe park\",\"shop\"],\r\n    \"website\" : \"http://google.com\",\r\n    \"language\" : \"French-IN\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://216.10.245.166//maps/api/place/add/json",
+							"protocol": "http",
+							"host": [
+								"216",
+								"10",
+								"245",
+								"166"
+							],
+							"path": [
+								"",
+								"maps",
+								"api",
+								"place",
+								"add",
+								"json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Google Maps Add  API   (XML )",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzZmNDY0YTIyYjRkMDAwMTdlYTc1NzQiLCJpYXQiOjE2NjgzMjI4MjMsImV4cCI6MTY2ODQwOTIyM30.eHHMfu5x-zz2O75dAg-OAZcRAGN3454dBbrDZUv_Lrs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\r\n<root>\r\n    <location>\r\n        <lat>-38.383494</lat>\r\n        <lng>33.427362</lng>\r\n    </location>\r\n    <accuracy>50</accuracy>\r\n    <name>The Mens store</name>\r\n    <phone_number>(+91) 983 893 3937</phone_number>\r\n    <address>Anna Salai, Chennai</address>\r\n    <types>shoe park</types>\r\n    <types>kadai</types>\r\n    <website>http://google.com</website>\r\n    <language>tamil-IN</language>\r\n</root>\r\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://216.10.245.166/maps/api/place/add/xml",
+							"protocol": "http",
+							"host": [
+								"216",
+								"10",
+								"245",
+								"166"
+							],
+							"path": [
+								"maps",
+								"api",
+								"place",
+								"add",
+								"xml"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "google maps Delete api (JASON)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzZmNDY0YTIyYjRkMDAwMTdlYTc1NzQiLCJpYXQiOjE2NjgzMjI4MjMsImV4cCI6MTY2ODQwOTIyM30.eHHMfu5x-zz2O75dAg-OAZcRAGN3454dBbrDZUv_Lrs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\"place_id\":\"21ae71b2903a7ee4906c54a1b09258b3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://216.10.245.166/maps/api/place/delete/json?key=qaclick123",
+							"protocol": "http",
+							"host": [
+								"216",
+								"10",
+								"245",
+								"166"
+							],
+							"path": [
+								"maps",
+								"api",
+								"place",
+								"delete",
+								"json"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "qaclick123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "google maps Delete api(xml)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzZmNDY0YTIyYjRkMDAwMTdlYTc1NzQiLCJpYXQiOjE2NjgzMjI4MjMsImV4cCI6MTY2ODQwOTIyM30.eHHMfu5x-zz2O75dAg-OAZcRAGN3454dBbrDZUv_Lrs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\r\n<root>\r\n    <place_id>2e14fca4fa9363ad1ae94029185e02d6</place_id>\r\n</root>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://216.10.245.166/maps/api/place/delete/xml?key=qaclick123",
+							"protocol": "http",
+							"host": [
+								"216",
+								"10",
+								"245",
+								"166"
+							],
+							"path": [
+								"maps",
+								"api",
+								"place",
+								"delete",
+								"xml"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "qaclick123"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "shopping cart",
+			"item": [
+				{
+					"name": "get token acess",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const box = pm.response.json();\r",
+									"pm.globals.set(\"Access_Token\", box.data.access_token)\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": " Basic c2hvcHBpbmdfb2F1dGhfY2xpZW50OnNob3BwaW5nX29hdXRoX3NlY3JldA==",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://rest-api.upskills.in/api/rest/oauth2/token/client_credentials",
+							"protocol": "http",
+							"host": [
+								"rest-api",
+								"upskills",
+								"in"
+							],
+							"path": [
+								"api",
+								"rest",
+								"oauth2",
+								"token",
+								"client_credentials"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "24cdd93fb568a927c0be9acc411afcf496b078d3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstname\": \"akanksha\",\r\n  \"lastname\": \"joshi\",\r\n  \"email\": \"akkij31@vipmail.hu\",\r\n  \"password\": \"akki123\",\r\n  \"confirm\": \"akki123\",\r\n  \"telephone\": \"1-541-754-3010\",\r\n  \"customer_group_id\": \"1\",\r\n  \"agree\": \"1\",\r\n  \"custom_field\": {\r\n    \"account\": {\r\n      \"1\": \"+364545454\"\r\n    }\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://rest-api.upskills.in/api/rest/register",
+							"protocol": "http",
+							"host": [
+								"rest-api",
+								"upskills",
+								"in"
+							],
+							"path": [
+								"api",
+								"rest",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "24cdd93fb568a927c0be9acc411afcf496b078d3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"akkij31@vipmail.hu\",\r\n  \"password\": \"akki123\"\r\n}\r\n\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://rest-api.upskills.in/api/rest/login",
+							"protocol": "http",
+							"host": [
+								"rest-api",
+								"upskills",
+								"in"
+							],
+							"path": [
+								"api",
+								"rest",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get account details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "24cdd93fb568a927c0be9acc411afcf496b078d3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://rest-api.upskills.in/api/rest/account",
+							"protocol": "http",
+							"host": [
+								"rest-api",
+								"upskills",
+								"in"
+							],
+							"path": [
+								"api",
+								"rest",
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update account data",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "24cdd93fb568a927c0be9acc411afcf496b078d3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstname\": \"Demo\",\r\n  \"lastname\": \"User\",\r\n  \"email\": \"nash1@vipmail.hu\",\r\n  \"telephone\": \"1-541-754-3010\",\r\n  \"custom_field\": {\r\n    \"account\": {\r\n      \"1\": \"+364545454\"\r\n    }\r\n  }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://rest-api.upskills.in/api/rest/account",
+							"protocol": "http",
+							"host": [
+								"rest-api",
+								"upskills",
+								"in"
+							],
+							"path": [
+								"api",
+								"rest",
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "24cdd93fb568a927c0be9acc411afcf496b078d3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://rest-api.upskills.in/api/rest/logout",
+							"protocol": "http",
+							"host": [
+								"rest-api",
+								"upskills",
+								"in"
+							],
+							"path": [
+								"api",
+								"rest",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "24cdd93fb568a927c0be9acc411afcf496b078d3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\":\"akkij31@vipmail.hu\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://rest-api.upskills.in/api/rest/forgotten",
+							"protocol": "http",
+							"host": [
+								"rest-api",
+								"upskills",
+								"in"
+							],
+							"path": [
+								"api",
+								"rest",
+								"forgotten"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
